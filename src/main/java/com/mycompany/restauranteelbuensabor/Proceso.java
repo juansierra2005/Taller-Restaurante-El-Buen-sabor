@@ -11,7 +11,7 @@ package com.mycompany.restauranteelbuensabor;
 public class Proceso {
 
     public static double hacerTodo() {
-        double sub = 0;
+        double subtotal = 0;
         double iva = 0;
         double tot = 0;
         double aux = 0;
@@ -20,14 +20,14 @@ public class Proceso {
         while (i < Datos.nom.length) {
             if (Datos.cant[i] > 0) {
 // multiplica precio por cantidad
-                sub = sub + Datos.p[i] * Datos.cant[i];
+                subtotal = subtotal + Datos.p[i] * Datos.cant[i];
                 cont = cont + 1;
             }
             i++;
         }// fin while
         if (cont > 3) {
-            if (sub > 0) {
-                aux = sub - (sub * 0.05);
+            if (subtotal > 0) {
+                aux = subtotal - (subtotal * 0.05);
                 if (aux > 50000) {
                     iva = aux * 0.19;
 // suma iva al subtotal con descuento
@@ -44,14 +44,14 @@ public class Proceso {
 // if(sub > 40000) sub = sub + (sub*0.10);
 // return sub;
         } else {
-            if (sub > 50000) {
-                iva = sub * 0.19;
+            if (subtotal > 50000) {
+                iva = subtotal * 0.19;
 // suma iva al subtotal
-                tot = sub + iva;
+                tot = subtotal + iva;
                 tot = tot + (tot * 0.10);
             } else {
-                iva = sub * 0.19;
-                tot = sub + iva;
+                iva = subtotal * 0.19;
+                tot = subtotal + iva;
             }
         }// fin if-else cont
         Datos.est = 1;

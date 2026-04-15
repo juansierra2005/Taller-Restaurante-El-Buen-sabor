@@ -15,10 +15,10 @@ public class Imprimir {
         System.out.println("    RESTAURANTE EL BUEN SABOR");
         System.out.println("    --- NUESTRA CARTA ---");
         System.out.println("========================================");
-        int i = 0;
-        while (i < Datos.nom.length) {
-            System.out.printf("%d. %-22s $%,.0f%n", (i + 1), Datos.nom[i], Datos.p[i]);
-            i++;
+        int indice = 0;
+        while (indice < Datos.nom.length) {
+            System.out.printf("%d. %-22s $%,.0f%n", (indice + 1), Datos.nom[indice], Datos.p[indice]);
+            indice++;
         }// fin while
         System.out.println("========================================");
     }
@@ -58,7 +58,7 @@ public class Imprimir {
         }// fin while
         if (cont > 3) {
             aux = sub - (sub * 0.05);
-        } else {
+        } else {      
             aux = sub;
         }
         if (aux > 50000) {
